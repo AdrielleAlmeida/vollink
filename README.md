@@ -1,155 +1,72 @@
+
 # Vollink
 
-Vollink é uma aplicação que conecta voluntários a pessoas que precisam de serviços sociais em datas específicas. A plataforma permite que voluntários cadastrem serviços e beneficiários encontrem ajuda facilmente.
+Vollink é uma plataforma que conecta voluntários a pessoas que precisam de ajuda em atividades do dia a dia. A aplicação foi desenvolvida utilizando NestJS para o backend e React com Vite e Tailwind CSS para o frontend.
 
-## 🧩 Tecnologias Utilizadas
+## Funcionalidades
 
-- **Frontend**: React + Vite + TailwindCSS
-- **Backend**: NestJS + PostgreSQL
-- **Comunicação**: REST API + JWT + Ngrok
-- **Banco de Dados**: PostgreSQL
-- **Hospedagem Frontend**: Vercel
+- Cadastro e autenticação de usuários
+- Escolha entre perfil de voluntário ou beneficiário
+- Voluntário pode registrar serviços disponíveis
+- Beneficiário pode visualizar e solicitar serviços
+- Página "Meus Serviços" para voluntários
+- API protegida por JWT
 
----
+## Tecnologias Utilizadas
 
-## 🚀 Como Executar o Projeto Localmente
+- **Backend:** Node.js, NestJS, TypeORM, PostgreSQL, Kafka
+- **Frontend:** React, Vite, Tailwind CSS, Axios
+- **Outros:** Docker, JWT, Vercel (Frontend)
 
-### 1. Clonar o repositório
-
-```bash
-git clone https://github.com/seu-usuario/vollink.git
-cd vollink
-```
-
----
-
-## 📦 Backend (NestJS)
+## Como Executar o Projeto
 
 ### Pré-requisitos
 
-- Node.js ^18
-- Docker e Docker Compose (ou PostgreSQL local)
+- Node.js e npm
+- Docker (para subir banco e Kafka)
+- PostgreSQL (caso não use Docker)
+- Vite (já incluído no `devDependencies`)
 
-### Instalação
+### Backend
 
 ```bash
-cd vollink-backend
+git clone https://github.com/seu-usuario/vollink-b.git
+cd vollink-b
 npm install
-```
-
-### Configuração do ambiente
-
-Crie um arquivo `.env` com:
-
-```env
-DATABASE_URL=postgres://usuario:senha@localhost:5432/vollink
-JWT_SECRET=uma-chave-secreta
-```
-
-> Ajuste `usuario`, `senha` e `localhost` conforme seu banco local ou Docker.
-
-### Rodar com Docker (PostgreSQL)
-
-```bash
-docker compose up -d
-```
-
-### Rodar o servidor NestJS
-
-```bash
 npm run start
 ```
 
----
-
-## 🌐 Expondo o backend com Ngrok
-
-### Instale o Ngrok (caso ainda não tenha)
-
-```bash
-npm install -g ngrok
-```
-
-### Exponha a porta do backend
-
-```bash
-ngrok http 3000
-```
-
-Copie o link HTTPS gerado e use no frontend `.env`.
-
----
-
-## 💻 Frontend (React + Vite)
-
-### Instalação
-
-```bash
-cd vollink-frontend
-npm install
-```
-
-### Configuração do ambiente
-
 Crie um arquivo `.env` com:
 
-```env
-VITE_API_URL=https://xxxxxx.ngrok.io
+```
+JWT_SECRET=sua_chave_secreta
+DATABASE_URL=postgres://user:password@localhost:5432/seubanco
 ```
 
-> Substitua pelo link HTTPS gerado pelo Ngrok.
-
-### Rodar em desenvolvimento
+### Frontend
 
 ```bash
+git clone https://github.com/seu-usuario/vollink-frontend.git
+cd vollink-frontend
+npm install
 npm run dev
 ```
 
----
+No arquivo `.env` do frontend:
 
-## 🆙 Deploy na Vercel
-
-1. Suba o repositório para o GitHub.
-2. Acesse [https://vercel.com](https://vercel.com) e importe o repositório.
-3. Em **Environment Variables**, adicione:
-
-```env
-VITE_API_URL=https://xxxxxx.ngrok.io
+```
+VITE_API_URL=http://localhost:3000
 ```
 
-4. Finalize o deploy. Acesse pelo link gerado (ex: `https://vollink.vercel.app`).
+## Autores
 
----
+Este projeto foi desenvolvido por:
 
-## ✅ Funcionalidades
+- Matheus Mesquita ([@MatheusM0](https://github.com/MatheusM0))
+- Alice Fernandes ([@alicef](https://github.com/alicef))
 
-- Cadastro e login de usuários
-- Escolha de papel: voluntário ou beneficiário
-- Voluntário pode cadastrar serviços com data/local
-- Beneficiário pode visualizar serviços disponíveis
-- Tela de "Meus Serviços" para voluntários
+Contribuições são bem-vindas!
 
----
+## Licença
 
-## 🧪 Teste Rápido
-
-Você pode testar o backend com:
-
-```bash
-curl -X POST http://localhost:3000/users/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Test User", "email":"test@example.com", "username":"testuser", "password":"123456"}'
-```
-
----
-
-## 📌 Observações
-
-- Este projeto está em fase de protótipo/MVP.
-- Recomendado migrar o backend para Render ou Railway para produção.
-
----
-
-## 📄 Licença
-
-MIT © 2025 - Desenvolvido por [Seu Nome]
+Este projeto está licenciado sob a MIT License.
