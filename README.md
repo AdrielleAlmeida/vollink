@@ -63,7 +63,7 @@ VITE_API_URL=http://localhost:3000
 Este projeto foi desenvolvido por:
 
 - Matheus Mesquita ([@MatheusM0](https://github.com/MatheusM0))
-- Diego Lima ([@diegolima](https://github.com/diegolima))
+- Bruno Castro ([@brunocastro](https://github.com/brunocastro))
 
 Contribuições são bem-vindas!
 
