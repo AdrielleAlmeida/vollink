@@ -58,6 +58,13 @@ No arquivo `.env` do frontend:
 VITE_API_URL=http://localhost:3000
 ```
 
+## Autores
+
+Este projeto foi desenvolvido por:
+
+- Matheus Mesquita ([@MatheusM0](https://github.com/MatheusM0))
+- Carla Souza ([@carlasouza](https://github.com/carlasouza))
+
 Contribuições são bem-vindas!
 
 ## Licença
